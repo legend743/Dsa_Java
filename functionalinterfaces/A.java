@@ -1,5 +1,6 @@
 package functionalinterfaces;
 
+import java.util.Objects;
 import java.util.function.Predicate;
 
 public class A {
@@ -11,6 +12,10 @@ public class A {
         Predicate<String>EndsWithL=x->x.toLowerCase().charAt(x.length()-1)=='l';
         Predicate<String>And=nameStartWithF.and(EndsWithL);
         Predicate<String>Or=nameStartWithF.or(EndsWithL);
+      Predicate<Object>predicate=Predicate.isEqual("Faisal");
+      String name="Faisal";
+        System.out.println(name.toLowerCase());
+        System.out.println(predicate.test(name.toLowerCase()));
         System.out.println(Or.test("Faheem"));
         System.out.println(And.test("Faheem"));
         System.out.println(nameStartWithF.test("Doctor"));
